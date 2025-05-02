@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  web:
+    image: vulnerables/web-dvwa
+    ports:
+      - "8080:80"
+    restart: always
+    environment:
+      - MYSQL_USER=dvwa
+      - MYSQL_PASSWORD=p@ssw0rd
+      - MYSQL_DATABASE=dvwa
+      - MYSQL_ROOT_PASSWORD=root
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    restart: always
