@@ -68,8 +68,7 @@ Exécution de commandes système depuis l'interface web.
 * Vérifie `$_FILES['uploaded']['type']` mais cela **peut être falsifié**
 
 ### 🎯 Exploitation avec Burp Suite
-
-1. Renomme `shell.php` en `shell.php.jpg`
+1. Renomme `shell.php` en `shell.php.jpg` | Mais pour faire plus simple on peut utiliser le même fichier php.
 2. Upload depuis DVWA.
 3. Intercepte la requête avec Burp Suite
 4. Modifie le champ MIME :
@@ -87,7 +86,7 @@ Exécution de commandes système depuis l'interface web.
 * Accès à :
 
   ```
-  http://localhost:8080/dvwa/hackable/uploads/shell.php.jpg?cmd=ls
+  http://localhost:8080/dvwa/hackable/uploads/shell.php?cmd=ls
   ```
 
 ### ⚠️ Astuce
